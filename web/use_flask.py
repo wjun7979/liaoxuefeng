@@ -1,5 +1,5 @@
 # -*- conding: utf-8 -*-
-# 使用Web框架Flask
+# 使用Web框架Flask12
 
 from flask import Flask
 from flask import request
