@@ -12,7 +12,7 @@ class Settings():
         self.ship_limit = 3  # 玩家拥有的飞船数量
 
         # 子弹设置
-        self.bullet_width = 300  # 子弹的宽度
+        self.bullet_width = 10  # 子弹的宽度
         self.bullet_height = 15  # 子弹的高度
         self.bullet_color = 60, 60, 60  # 子弹的颜色
         self.bullets_allowed = 3  # 最大子弹数

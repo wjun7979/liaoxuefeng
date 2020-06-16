@@ -38,7 +38,7 @@ def run_game():
         if stats.game_active:
             ship.update()  # 根据移动标志调整飞船的位置
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)  # 更新子弹的位置，并删除已消失的子弹
-            gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)  # 更新外星人的位置
+            gf.update_aliens(ai_settings, stats, screen, sb, ship, aliens, bullets)  # 更新外星人的位置
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)  # 更新屏幕
 
 
