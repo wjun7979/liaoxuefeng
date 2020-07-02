@@ -1,0 +1,44 @@
+{% if book_list %}
+<h1>Book List</h1>
+<table>
+    <tr>
+        <td>书名</td>
+        <td>作者</td>
+        <td>出版社</td>
+        <td>出版时间</td>
+        <td>操作</td>
+    </tr>
+    {% for book in book_list.all %}
+    <tr>
+        <td>{{ book.name}}</td>
+        <td>{{ book.author}}</td>
+        <td>{{ book.pub_house}}</td>
+        <td>{{ book.pub_date}}</td>
+        <td>
+            <a href="{% url 'getBook' book.id %}">修改</a>
+            <a href="{% url 'delBook' book.id %}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% block book %}
+{% if book %}
+<h1>Book Update</h1>
+{% endif %}
+<form action="/addBook/" method="POST" name="addBook">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ book.id}}" />
+    <p><span>书名：</span><input type="text" name="name" value="{{ book.name }}" /></p>
+    <p><span>作者：</span><input type="text" name="author" value="{{ book.author }}"/></p>
+    <p><span>出版社：</span><input type="text" name="pub_house" value="{{ book.pub_house }}" /></p>
+    {% if book_list %}
+    <input type="submit" value="添加" />
+    {% endif %}
+    {% if book %}
+    <input type="submit" value="保存" />
+    <input type="button" value="取消" onclick="location.href='/'" />
+    {% endif %}
+</form>
+{% endblock book %}
