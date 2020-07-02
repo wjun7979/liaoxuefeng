@@ -8,10 +8,10 @@ class Button():
         self.screen_rect = screen.get_rect()
 
         # 设置按钮的尺寸和其他属性
-        self.width, self.height = 200, 50
+        self.width, self.height = 200, 60
         self.button_color = (54, 142, 234)
         self.text_color = (255, 255, 255)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.SysFont('arial', 48)
 
         # 创建按钮的rect对象，并使其居中
         self.rect = pygame.Rect(0, 0, self.width, self.height)
